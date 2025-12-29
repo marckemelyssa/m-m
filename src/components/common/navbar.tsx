@@ -157,7 +157,7 @@ export default function NavBar() {
           <button
             aria-label="Toggle Menu"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="sm:hidden text-black hover:text-[var(--ds-secondary-pure)] transition"
+            className="sm:hidden text-[var(--ds-primary-1)] hover:text-[var(--ds-primary-2)] transition"
           >
             <AnimatePresence mode="wait" initial={false}>
               {menuOpen ? (
@@ -209,7 +209,7 @@ export default function NavBar() {
               },
               exit: { opacity: 0, y: -30, transition: { duration: 0.4 } },
             }}
-            className="fixed top-0 left-0 h-screen w-screen sm:hidden bg-neutral-100 backdrop-blur-md z-[60] flex flex-col px-8 py-20"
+            className="fixed top-0 left-0 h-screen w-screen sm:hidden bg-black/90 backdrop-blur-lg z-[60] flex flex-col px-8 py-20"
           >
             <div className="flex flex-col gap-8">
               {navLinks.map((item) => (
@@ -237,8 +237,8 @@ export default function NavBar() {
                     onClick={() => setMenuOpen(false)}
                     className={`flex items-center gap-3 text-2xl font-semibold tracking-wide transition-colors ${
                       pathname === item.href
-                        ? "text-[var(--ds-secondary-pure)]"
-                        : "text-gray-700 hover:text-[var(--ds-secondary-pure)]"
+                        ? "text-white"
+                        : "text-white hover:text-[var(--ds-primary-1)]"
                     }`}
                   >
                     {item.label}
