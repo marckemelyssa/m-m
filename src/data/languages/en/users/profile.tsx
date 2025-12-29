@@ -1,0 +1,41 @@
+const profile = {
+  title: "Profile",
+  subtitle: "Manage your information and quickly access your tickets and favorites.",
+  updateProfile: "Profile updated",
+  completeProfile: "Complete your profile",
+  enterWithGoogle: "Signed in with Google",
+  enterWithApple: "Signed in with Apple",
+  locationNotSpecified: "Location not provided",
+  data: {
+    data: "Details",
+    name: "First name",
+    surname: "Last name",
+    email: "Email",
+    phone: "Phone",
+    address: "Address",
+    city: "City",
+    country: "Country",
+    searchActualLocation: "Find current location",
+    searchingLocation: "Searching location...",
+    favoritesRhytyms: "Favorite rhythms",
+  },
+  save: "Save",
+  edit: "Edit",
+  remove: "Remove",
+  photoError: "Photo must be at most 2MB.",
+  photoDialog: {
+    title: "Remove photo?",
+    subtitle: "Are you sure you want to delete your profile photo?",
+    cancel: "Cancel",
+    delete: "Delete",
+  },
+  saving: "Saving...",
+  saveDialog: {
+    title: "Leave without saving?",
+    subtitle: "You have unsaved changes. Do you really want to leave this screen?",
+    cancel: "Cancel",
+    exitWithoutSave: "Leave without saving",
+  },
+}
+
+export default profile

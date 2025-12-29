@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,6 +42,36 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Design System Colors */
+  --ds-background: var(--ds-background);
+
+  --ds-primary-pure: var(--ds-primary-pure);
+  --ds-primary-1: var(--ds-primary-1);
+  --ds-primary-2: var(--ds-primary-2);
+  --ds-primary-3: var(--ds-primary-3);
+  --ds-primary-5: var(--ds-primary-5);
+
+  --ds-secondary-pure: var(--ds-secondary-pure);
+  --ds-secondary-1: var(--ds-secondary-1);
+  --ds-secondary-2: var(--ds-secondary-2);
+  --ds-secondary-3: var(--ds-secondary-3);
+
+  --ds-tertiary-pure: var(--ds-tertiary-pure);
+  --ds-tertiary-1: var(--ds-tertiary-1);
+  --ds-tertiary-2: var(--ds-tertiary-2);
+
+  --ds-quaternary-pure: var(--ds-quaternary-pure);
+  --ds-quaternary-1: var(--ds-quaternary-1);
+
+  --ds-quinary-pure: var(--ds-quinary-pure);
+  --ds-quinary-1: var(--ds-quinary-1);
+
+  --ds-neutral-1: var(--ds-neutral-1);
+  --ds-neutral-2: var(--ds-neutral-2);
+  --ds-neutral-3: var(--ds-neutral-3);
+  --ds-neutral-4: var(--ds-neutral-4);
+  --ds-neutral-5: var(--ds-neutral-5);
 }
 
 :root {
@@ -51,9 +82,9 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.864 0.0572 301.96);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.459 0.2336 307.07);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -76,6 +107,23 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --ds-background: oklch(0.9731 0.0069 304.24);
+
+  --ds-primary-pure: oklch(0.66 0.2354 11.4);
+  --ds-primary-1: oklch(0.75 0.1576 4.15);
+  --ds-primary-2: oklch(0.6559 0.1974 7.45);
+  --ds-primary-3: oklch(0.53 0.1703 3.3);
+
+  --ds-tertiary-pure: oklch(0.86 0.1541 88.41);
+  --ds-tertiary-1: oklch(0.92 0.1096 90.67);
+  
+  --ds-neutral-1: oklch(1 0 0);
+  --ds-neutral-2: oklch(0.9927 0.0041 301.43);
+  --ds-neutral-3: oklch(0.63 0.01 314.75);
+  --ds-neutral-4: oklch(0.5 0.0073 317.74);
+  --ds-neutral-5: oklch(0 0 0);
+  --ds-neutral-6: oklch(0.22 0.0091 255.61);
 }
 
 .dark {
@@ -110,6 +158,23 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  
+  --ds-background: oklch(0.9731 0.0069 304.24);
+  
+  --ds-primary-pure: oklch(0.66 0.2354 11.4);
+  --ds-primary-1: oklch(0.75 0.1576 4.15);
+  --ds-primary-2: oklch(0.6559 0.1974 7.45);
+  --ds-primary-3: oklch(0.53 0.1703 3.3);
+
+  --ds-tertiary-pure: oklch(0.86 0.1541 88.41);
+  --ds-tertiary-1: oklch(0.92 0.1096 90.67);
+  
+  --ds-neutral-1: oklch(1 0 0);
+  --ds-neutral-2: oklch(0.9927 0.0041 301.43);
+  --ds-neutral-3: oklch(0.63 0.01 314.75);
+  --ds-neutral-4: oklch(0.5 0.0073 317.74);
+  --ds-neutral-5: oklch(0 0 0);
+  --ds-neutral-6: oklch(0.22 0.0091 255.61);
 }
 
 @layer base {
