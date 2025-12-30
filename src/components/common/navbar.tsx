@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Briefcase, CalendarDays, Heart, LogOut, Menu, Ticket, User, X } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,8 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "@/hooks/useTranslation";
+
+type MenuItem = { separator: true } | { separator?: false; label: string; href: string; icon: LucideIcon };
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -33,7 +36,7 @@ export default function NavBar() {
     { label: "Sobre Nós", href: "/about" },
   ];
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { label: "Cursos", href: "/courses", icon: Heart },
     { separator: true },
     { label: "Perfil", href: "/user/profile", icon: User },
