@@ -9,8 +9,8 @@ export default function BackgroundVideo() {
   const [videoFailed, setVideoFailed] = useState(false);
 
   const { scrollY } = useScroll();
-  const bgOpacity = useTransform(scrollY, [0, 300], [0.2, 0.6]);
-  const bgColor = useMotionTemplate`rgba(0, 0, 0, ${bgOpacity})`;
+  const bgOpacity = useTransform(scrollY, [0, 300], [0.2, 0.8]);
+  const bgGradient = useMotionTemplate`linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,${bgOpacity}) 100%)`;
   const blurValue = useTransform(scrollY, [0, 400], [0, 50]);
   const blurFilter = useMotionTemplate`blur(${blurValue}px)`;
 
@@ -72,7 +72,7 @@ export default function BackgroundVideo() {
 
       <motion.div
         className="absolute inset-0 pointer-events-none"
-        style={{ backgroundColor: bgColor }}
+        style={{ backgroundImage: bgGradient }}
       />
     </div>
   );

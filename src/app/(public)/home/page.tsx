@@ -1,13 +1,14 @@
 import BackgroundVideo from "./bgVideo";
+import About from "./sections/about";
+import Intro from "./sections/intro";
 
 export default async function Home() {
-  // When auth/location is available, pass it here to personalize the feed.
 
   return (
-    <div className="relative text-white overflow-x-hidden">
+    <div className="relative w-full overflow-x-hidden">
       <BackgroundVideo />
-      <div className="space-y-6 sm:space-y-10 px-4 sm:px-6 lg:px-8">
-      </div>
+      <Intro />
+      <About/>
     </div>
   );
 }
