@@ -1,5 +1,5 @@
 const backButton = {
-  title: "Voltar"
+  title: "Back"
 }
 
 export default backButton;

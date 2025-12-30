@@ -1,27 +1,27 @@
 const home = {
-    findEvents: "Dance de onde você estiver",
-    cantMiss: "Você não pode perder",
-    MostViewed: "Mais Vistos",
-    weekend: "Neste final de semana",
-    categories: "Explore por ritmos",
-    seeMore: "Ver Mais",
-    createEvents: {
-        title: "Crie eventos, divulgue e venda ingressos com facilidade",
-        support: {
-            title: "Suporte em todas as etapas",
-            subtitle: "Da publicação à venda, você tem acompanhamento dedicado."
-        },
-        publish: {
-            title: "Publicação grátis",
-            subtitle: "Sem taxa de adesão ou mensalidade para começar."
-        },
-        payments: {
-            title: "Pagamentos seguros",
-            subtitle: "Gestão de ingressos e repasses com transparência."
-        },
-        firstButton: "Crie seu evento",
-        secondaryButton: "Veja como funciona",
+  findEvents: "Dance from wherever you are",
+  cantMiss: "You can't miss",
+  MostViewed: "Most viewed",
+  weekend: "This weekend",
+  categories: "Explore by rhythms",
+  seeMore: "See more",
+  createEvents: {
+    title: "Create events, promote and sell tickets easily",
+    support: {
+      title: "Support at every step",
+      subtitle: "From publishing to sales, you get dedicated guidance.",
     },
+    publish: {
+      title: "Free publishing",
+      subtitle: "No signup fee or monthly charges to start.",
+    },
+    payments: {
+      title: "Secure payments",
+      subtitle: "Ticketing and payouts with transparency.",
+    },
+    firstButton: "Create your event",
+    secondaryButton: "See how it works",
+  },
 }
 
-export default home;
+export default home

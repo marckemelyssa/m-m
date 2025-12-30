@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useAuth } from "@/hooks/useAuth";
-import { useTranslation } from "@/hooks/useTranslation";
 
 type MenuItem = { separator: true } | { separator?: false; label: string; href: string; icon: LucideIcon };
 
@@ -29,18 +28,17 @@ export default function NavBar() {
   const { user, loading } = useAuth();
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const {t} = useTranslation();
 
   const navLinks = [
     { label: "Codex", href: "/codex" },
-    { label: "Sobre Nós", href: "/about" },
+    { label: "About Us", href: "/about" },
   ];
 
   const menuItems: MenuItem[] = [
-    { label: "Cursos", href: "/courses", icon: Heart },
+    { label: "Courses", href: "/courses", icon: Heart },
     { separator: true },
-    { label: "Perfil", href: "/user/profile", icon: User },
-    { label: "Sair", href: "#logout", icon: LogOut },
+    { label: "Profile", href: "/user/profile", icon: User },
+    { label: "Logout", href: "#logout", icon: LogOut },
   ];
   const displayName = user?.displayName || "Usuário";
   const avatarFallback = displayName.slice(0, 2).toUpperCase();
@@ -60,7 +58,7 @@ export default function NavBar() {
   const renderAvatarButton = () => (
     <button
       className="hidden sm:flex items-center gap-2 rounded-full p-0.5 transition focus-visible:outline-none hover:bg-white/10"
-      aria-label="Menu do usuário"
+      aria-label="User Menu"
       disabled={loading}
     >
       <Avatar className="h-10 w-10 transition hover:ring-2 hover:ring-[var(--ds-primary-1)] hover:shadow-lg hover:shadow-black/50">
@@ -102,7 +100,7 @@ export default function NavBar() {
               href={link.href}
               className={`transition-colors ${
                 pathname === link.href
-                  ? "text-[var(--ds-secondary-pure)]"
+                  ? "text-[var(--ds-primary-pure)]"
                   : "text-white/80 hover:text-[var(--ds-primary-1)]"
               }`}
             >

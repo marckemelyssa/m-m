@@ -23,6 +23,7 @@ type ContentSectionProps = {
   paddingTop?: string;
   paddingBottom?: string;
   hideImages?: boolean;
+  showSeparator?: boolean;
 };
 
 export default function ContentSection({
@@ -37,20 +38,23 @@ export default function ContentSection({
   paddingTop = "pt-24",
   paddingBottom = "pb-24",
   hideImages = false,
+  showSeparator = true,
 }: ContentSectionProps) {
   return (
     <section id={id} className={`relative z-10 w-full bg-transparent flex items-center ${paddingTop} ${paddingBottom}`}>
       {/* Animated top accent line */}
-      <motion.div
-        className="absolute top-0 left-0 right-0 px-6 sm:px-10 lg:px-16"
-        initial={{ scaleX: 0, opacity: 0 }}
-        whileInView={{ scaleX: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-        style={{ transformOrigin: "center", willChange: "transform, opacity" }}
-      >
-        <div className="w-full h-0.5 bg-[var(--ds-primary-1)] rounded-full" />
-      </motion.div>
+      {showSeparator && (
+        <motion.div
+          className="absolute top-0 left-0 right-0 px-6 sm:px-10 lg:px-16"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          style={{ transformOrigin: "center", willChange: "transform, opacity" }}
+        >
+          <div className="w-full h-0.5 bg-[var(--ds-primary-1)] rounded-full" />
+        </motion.div>
+      )}
 
       <div
         className="max-w-[1600px] mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28
@@ -74,12 +78,18 @@ export default function ContentSection({
           {buttonLabel && (
             buttonHref ? (
               <Link href={buttonHref}>
-                <CustomButton variant="secondary">{buttonLabel}</CustomButton>
+                <CustomButton>
+                  {buttonLabel}
+                </CustomButton>
               </Link>
             ) : buttonOnClick ? (
-              <CustomButton variant="secondary" onClick={buttonOnClick}>{buttonLabel}</CustomButton>
+              <CustomButton onClick={buttonOnClick}>
+                  {buttonLabel}
+              </CustomButton>
             ) : (
-              <CustomButton variant="secondary">{buttonLabel}</CustomButton>
+              <CustomButton>
+                {buttonLabel}
+              </CustomButton>
             )
           )}
 

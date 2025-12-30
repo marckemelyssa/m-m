@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils"
 
 type CustomButtonVariant =
   | "primary"
-  | "primary1"
   | "secondary"
   | "tertiary"
   | "quaternary"
@@ -27,9 +26,7 @@ interface CustomButtonProps {
 
 const variantClasses: Record<CustomButtonVariant, string> = {
   primary:
-    "bg-[var(--ds-primary-2)] hover:bg-[var(--ds-primary-pure)] text-neutral-100",
-  primary1:
-    "bg-[var(--ds-primary-5)]/80 hover:bg-[var(--ds-primary-2)]/75 text-neutral-100",
+    "bg-[var(--ds-primary-3)] hover:bg-[var(--ds-primary-2)] text-neutral-100",
   secondary:
     "bg-[var(--ds-secondary-2)] hover:bg-[var(--ds-secondary-1)] text-neutral-100",
   tertiary:
@@ -48,7 +45,7 @@ const variantClasses: Record<CustomButtonVariant, string> = {
 export function CustomButton({
   children,
   icon,
-  variant = "secondary",
+  variant = "primary",
   fullWidth,
   onClick,
   type = "button",

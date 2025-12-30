@@ -1,7 +1,7 @@
 const footer = {
-  copyright: "© 2025 WeDance. Todos os direitos reservados.",
-  language: "Escolha um idioma",
-  languageDescription: "Selecione o idioma que prefere usar.",
+  copyright: "© 2025 WeDance. All rights reserved.",
+  language: "Choose a language",
+  languageDescription: "Select the language you prefer to use.",
 }
 
 export default footer

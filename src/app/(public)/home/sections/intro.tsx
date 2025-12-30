@@ -39,7 +39,7 @@ export default function Intro() {
             viewport={{ once: true, amount: 0.3 }}
             className="text-lg text-neutral-200"
           >
-            Creators of The Code — a one-year online experience that reveals the
+            Teachers, coreographys and creators of The Code: a one-year online experience that reveals the
             methodology behind their dance, refined through years of research
             and a journey across more than 30 countries.
           </motion.p>
@@ -50,8 +50,9 @@ export default function Intro() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <CustomButton variant="secondary" onClick={scrollToAbout}>
-              Ver mais
+            <CustomButton variant="primary" onClick={scrollToAbout}>
+
+              Explore
             </CustomButton>
           </motion.div>
 

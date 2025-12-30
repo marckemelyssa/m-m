@@ -11,7 +11,7 @@ export default function BackgroundVideo() {
   const { scrollY } = useScroll();
   const bgOpacity = useTransform(scrollY, [0, 300], [0.2, 0.8]);
   const bgGradient = useMotionTemplate`linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,${bgOpacity}) 100%)`;
-  const blurValue = useTransform(scrollY, [0, 400], [0, 50]);
+  const blurValue = useTransform(scrollY, [0, 800], [0, 50]);
   const blurFilter = useMotionTemplate`blur(${blurValue}px)`;
 
   useEffect(() => {
