@@ -50,7 +50,7 @@ export default function Intro() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <CustomButton variant="primary" onClick={scrollToAbout}>
+            <CustomButton onClick={scrollToAbout}>
 
               Explore
             </CustomButton>

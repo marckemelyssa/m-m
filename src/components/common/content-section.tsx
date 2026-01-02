@@ -52,7 +52,7 @@ export default function ContentSection({
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           style={{ transformOrigin: "center", willChange: "transform, opacity" }}
         >
-          <div className="w-full h-0.5 bg-[var(--ds-primary-1)] rounded-full" />
+          <div className="w-full h-0.5 bg-[var(--ds-primary-3)] rounded-full" />
         </motion.div>
       )}
 
