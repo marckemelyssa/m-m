@@ -1,49 +1,55 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
-
-const items = [
-  "Mentorias ao vivo para feedback direto.",
-  "Playbooks de discovery, entrega e lançamento.",
-  "Trilhas práticas com checkpoints claros.",
-  "Comunidade ativa para trocar e abrir oportunidades.",
-  "Templates visuais e narrativas para vender valor.",
-];
 
 export default function CodeIncluded() {
   return (
-    <section className="relative z-10 w-screen max-w-none left-1/2 -translate-x-1/2 overflow-hidden pb-16 pt-8 -mt-16">
-      
-      <div className="relative max-w-[1300px] mx-auto px-4 sm:px-6 md:px-12 lg:px-28 text-left text-white">
-        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-24">
-          <div className="relative w-full lg:w-[40%] max-w-[520px]">
-            <div className="absolute inset-0 bg-black/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-[0_24px_90px_rgba(0,0,0,0.35)]">
-              <Image
-                src="/images/the_code.jpg"
-                alt="The Code"
-                width={900}
-                height={1100}
-                className="w-full h-full object-cover"
-                priority
-              />
-            </div>
+    <section
+      id="code-included-section"
+      className="relative z-10 w-full bg-transparent py-20"
+    >
+      <div className="max-w-[1300px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
+        <div className="relative w-full max-w-[380px] mx-auto lg:mx-0">
+          <div className="absolute inset-0 bg-[var(--ds-primary-1)]/30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
+            <Image
+              src="/images/the_code.jpg"
+              alt="The Code"
+              width={900}
+              height={1100}
+              className="h-full w-full object-cover"
+              priority
+            />
           </div>
+        </div>
 
-          <div className="space-y-6 w-full lg:w-[60%] max-w-[700px]">
-            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
-              O que você leva do The Code
-            </h2>
-            <ul className="space-y-4 text-lg">
-              {items.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <Sparkles className="h-5 w-5 text-white mt-1" />
-                  <span className="text-white/90 leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="space-y-6">
+          <motion.div
+            className="absolute top-0 left-0 right-0 px-6 sm:px-10 lg:px-16"
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            style={{ transformOrigin: "center", willChange: "transform, opacity" }}
+          >
+            <div className="w-full h-0.5 bg-[var(--ds-primary-3)] rounded-full" />
+          </motion.div>
+
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ds-primary-2)]">
+            Welcome to the code
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+            A program to elevate your dance to a high-impact level.
+          </h2>
+          <p className="text-lg sm:text-xl text-white/80 max-w-4xl">
+            We accelerate your evolution through a refined methodology, close guidance, and a structured journey that reflects real artistic growth.
+            You come in with curiosity and intention; you leave with a clear process to move, connect, and express with efficiency, depth, and authenticity.
+          </p>
+          <p className="text-base sm:text-lg text-white/70 max-w-3xl">
+            More than a course, The Code is a sustainable and guided path, created to keep you in rhythm, refine your artistic identity,
+            and unlock a universal language of connection through dance.
+          </p>
         </div>
       </div>
     </section>
