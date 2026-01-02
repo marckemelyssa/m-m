@@ -41,13 +41,15 @@ export default function CodeInfo() {
     <section className="relative z-10 w-full bg-transparent py-16">
       <div className="max-w-[1300px] mx-auto space-y-8 text-left">
 
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-5xl">
-          Mais que um curso, um caminho completo para dominar o código.
-        </h2>
-        <p className="text-lg text-gray-200 max-w-4xl">
-          Estruturamos uma jornada comercial e prática: do zero à entrega, com acompanhamento,
-          projetos guiados e uma linha editorial que mantém você motivado.
-        </p>
+        <div className="text-center space-y-3">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-5xl mx-auto">
+            Um caminho completo para dominar o código.
+          </h2>
+          <p className="text-lg text-gray-200 max-w-4xl mx-auto">
+            Estruturamos uma jornada focada e prática: do zero à entrega, com acompanhamento,
+            projetos guiados e uma linha editorial que mantém você motivado.
+          </p>
+        </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 max-w-6xl">
           {highlights.map((item) => (
