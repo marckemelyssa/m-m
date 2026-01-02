@@ -61,7 +61,7 @@ export default function NavBar() {
           <button
             aria-label="Toggle Menu"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="sm:hidden text-[var(--ds-primary-1)] hover:text-[var(--ds-primary-2)] transition"
+            className="sm:hidden text-[var(--ds-primary-3)] hover:text-[var(--ds-primary-1)] transition"
           >
             <AnimatePresence mode="wait" initial={false}>
               {menuOpen ? (
@@ -136,14 +136,11 @@ export default function NavBar() {
                   <Link
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`flex items-center gap-3 text-2xl font-semibold tracking-wide transition-colors ${
-                      pathname === item.href
-                        ? "text-white"
-                        : "text-white hover:text-[var(--ds-primary-1)]"
-                    }`}
+                    className="transition-colors text-white/80 font-semibold uppercase hover:text-[var(--ds-primary-3)]"
                   >
                     {item.label}
                   </Link>
+
                 </motion.div>
               ))}
 
