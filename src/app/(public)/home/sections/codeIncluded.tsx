@@ -4,6 +4,33 @@ import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const items = [
+  {
+    title: "44 in-depth video classes",
+    desc: "Monthly themes with weekly progressions, covering Marck & Melyssa’s complete Brazilian Zouk methodology.",
+  },
+  {
+    title: "11 live mentoring sessions with M&M",
+    desc: "One group session per month (Feb–Dec 2026) to guide your progression and deepen understanding.",
+  },
+  {
+    title: "Monthly personalized feedback",
+    desc: "One video feedback per month (up to 1 minute), focused on refinement and clarity.",
+  },
+  {
+    title: "Structured learning path",
+    desc: "Clear chapters and checkpoints to maintain rhythm, focus, and continuity.",
+  },
+  {
+    title: "Community & exchange",
+    desc: "Access to an active international community for shared growth and perspective.",
+  },
+  {
+    title: "Exclusive benefits",
+    desc: "15% OFF private classes (from 2027) + Official The Code Certificate, approved and signed by M&M.",
+  },
+];
+
 export default function CodeIncluded() {
   return (
     <section
@@ -12,7 +39,7 @@ export default function CodeIncluded() {
     >
       <div className="max-w-[1300px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
         <div className="relative w-full max-w-[550px] mx-auto lg:mx-0">
-          <div className="absolute left-1/2 top-4/7 w-[78%] max-w-[420px] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--ds-primary-3)]/22 blur-[42px]" />
+          <div className="absolute left-1/2 top-1/2 w-[78%] max-w-[420px] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--ds-primary-3)]/22 blur-[42px]" />
           <div className="relative overflow-hidden rounded-3xl">
             <Image
               src="/images/included.svg"
@@ -44,16 +71,17 @@ export default function CodeIncluded() {
             What’s included in your The Code experience
           </h2>
           <div className="space-y-4 text-lg sm:text-xl text-white/85">
-            {[
-              "44 in-depth video classes",
-              "Playbooks práticos de discovery, entrega e lançamento para acelerar resultados.",
-              "Trilhas com checkpoints claros para manter ritmo, foco e consistência.",
-              "Comunidade ativa para trocar, testar ideias e abrir oportunidades reais.",
-              "Templates visuais e narrativas para vender valor com clareza e impacto."
-            ].map((line) => (
-              <div key={line} className="flex items-center gap-3">
-                <Sparkles className="h-5 w-5 text-[var(--ds-primary-3)] flex-shrink-0" />
-                <span className="leading-relaxed">{line}</span>
+            {items.map((item) => (
+              <div key={item.title} className="flex items-start gap-3">
+                <Sparkles className="h-5 w-5 text-[var(--ds-primary-3)] flex-shrink-0 mt-1" />
+                <div className="space-y-1">
+                  <p className="text-base sm:text-lg font-semibold text-white leading-tight">
+                    {item.title}
+                  </p>
+                  <p className="text-sm sm:text-base text-white/75 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
