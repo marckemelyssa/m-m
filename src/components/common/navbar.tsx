@@ -14,6 +14,7 @@ export default function NavBar() {
   const navLinks = [
     { label: "The Code", href: "/home" },
     { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" }
   ];
 
   React.useEffect(() => {
