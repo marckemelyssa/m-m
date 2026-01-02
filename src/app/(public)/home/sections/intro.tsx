@@ -19,7 +19,7 @@ export default function Intro() {
 
   return (
     <section className="relative z-10 min-h-screen flex items-center">
-      <div className="max-w-[1600px] mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-28">
+      <div className="max-w-[1300px] mx-auto w-full">
         <div className="max-w-xl space-y-6">
 
           <motion.h1

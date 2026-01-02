@@ -27,7 +27,7 @@ const highlights = [
   }
 ];
 
-export default function CodeInfo() {
+export default function CodeAbout() {
   return (
     <section className="relative z-10 w-full bg-transparent px-4 sm:px-6 md:px-12 lg:px-28 py-20">
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
