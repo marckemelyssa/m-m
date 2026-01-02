@@ -73,7 +73,7 @@ export default function CodeIncluded() {
           <div className="space-y-4 text-lg sm:text-xl text-white/85">
             {items.map((item) => (
               <div key={item.title} className="flex items-start gap-3">
-                <Sparkles className="h-5 w-5 text-[var(--ds-primary-3)] flex-shrink-0 mt-1" />
+                <Sparkles className="h-5 w-5 text-[var(--ds-primary-3)] flex-shrink-0" />
                 <div className="space-y-1">
                   <p className="text-base sm:text-lg font-semibold text-white leading-tight">
                     {item.title}
