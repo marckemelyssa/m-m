@@ -41,11 +41,11 @@ export default function CodeInfo() {
     <section className="relative z-10 w-full bg-transparent py-16">
       <div className="max-w-[1300px] mx-auto space-y-8 text-left">
 
-        <div className="text-center space-y-3">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-5xl mx-auto">
+        <div className="space-y-3">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-5xl">
             Um código para guiar sua jornada
           </h2>
-          <p className="text-lg text-gray-200 max-w-4xl mx-auto">
+          <p className="text-lg text-gray-200 max-w-4xl">
             Estruturamos uma jornada focada e prática: do zero à entrega, com acompanhamento,
             projetos guiados e uma linha editorial que mantém você motivado.
           </p>
