@@ -1,23 +1,23 @@
 "use client";
 
-export default function CodeAbout() {
+export default function CodeBuy() {
   return (
-    <section className="relative z-10 w-full overflow-visible py-20">
-      {/* Fundo full-bleed com gradiente neutro → rosa → neutro */}
+    <section
+      id="code-about-section"
+      className="relative z-10 w-screen max-w-none left-1/2 -translate-x-1/2 overflow-hidden py-20"
+    >
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-90"
         style={{
           width: "100vw",
           left: "50%",
           transform: "translateX(-50%)",
           background:
-            "linear-gradient(to bottom, var(--ds-neutral-6) 0%,  var(--ds-primary-3) 100%",
+            "linear-gradient(to bottom, var(--ds-neutral-6) 0%, var(--ds-primary-3) 100%)",
         }}
-      >
-        {/* Single layer only */}
-      </div>
+      />
 
-      <div className="relative max-w-[1300px] mx-auto text-left space-y-4">
+      <div className="relative max-w-[1300px] mx-auto px-4 sm:px-6 md:px-12 lg:px-28 text-left space-y-4">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-4xl">
           A space where technique meets presence and expression.
         </h2>

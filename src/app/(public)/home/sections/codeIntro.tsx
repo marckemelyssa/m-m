@@ -5,7 +5,10 @@ import Image from "next/image";
 
 export default function CodeIntro() {
   return (
-    <section className="relative z-10 w-full bg-transparent py-20">
+    <section
+      id="code-intro-section"
+      className="relative z-10 w-full bg-transparent py-20"
+    >
       <div className="max-w-[1300px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
         <div className="space-y-6">
           <motion.div

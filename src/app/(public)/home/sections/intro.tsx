@@ -8,11 +8,11 @@ export default function Intro() {
   const { t } = useTranslation();
 
   const scrollToAbout = () => {
-    const aboutElement = document.getElementById('about-section');
-    if (aboutElement) {
-      aboutElement.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
+    const target = document.getElementById("code-intro-section");
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
       });
     }
   };

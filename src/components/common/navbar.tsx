@@ -4,10 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Briefcase, CalendarDays, Heart, LogOut, Menu, Ticket, User, X } from "lucide-react";
+import { Heart, LogOut, Menu, User, X } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -27,10 +26,9 @@ export default function NavBar() {
   const [mounted, setMounted] = React.useState(false);
   const { user, loading } = useAuth();
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   const navLinks = [
-    { label: "Codex", href: "/codex" },
+    { label: "The Code", href: "/home" },
     { label: "About Us", href: "/about" },
   ];
 
@@ -75,19 +73,19 @@ export default function NavBar() {
   );
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg">
+    <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="relative w-full px-1 sm:px-2 py-3 sm:py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-4 sm:gap-6">
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/icons/mm_logo.png"
+                src="/icons/mm_logo.svg"
                 alt="Marck e Melyssa"
-                width={120}
-                height={40}
+                width={10}
+                height={5}
                 priority
-                className="h-7 sm:h-8 w-auto select-none"
+                className="h-6 sm:h-5 w-auto select-none"
               />
             </Link>
           </div>
@@ -100,8 +98,8 @@ export default function NavBar() {
               href={link.href}
               className={`transition-colors ${
                 pathname === link.href
-                  ? "text-[var(--ds-primary-pure)]"
-                  : "text-white/80 hover:text-[var(--ds-primary-1)]"
+                  ? "text-white/80"
+                  : "text-white/80 hover:text-[var(--ds-primary-3)]"
               }`}
             >
               {link.label}
@@ -186,9 +184,6 @@ export default function NavBar() {
           </button>
         </div>
       </div>
-
-      <Separator className="bg-gradient-to-r from-[var(--ds-primary-1)] to-[var(--ds-primary-2)]" />
-
 
       {/* Menu Mobile */}
       <AnimatePresence>
