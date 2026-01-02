@@ -1,5 +1,6 @@
 import BackgroundVideo from "./bgVideo";
-import About from "./sections/about";
+import AboutCode from "./sections/about";
+import CodeInfo from "./sections/codeInfo";
 import Intro from "./sections/intro";
 
 export default async function Home() {
@@ -8,7 +9,8 @@ export default async function Home() {
     <div className="relative w-full overflow-x-hidden">
       <BackgroundVideo />
       <Intro />
-      <About/>
+      <AboutCode/>
+      <CodeInfo/>
     </div>
   );
 }

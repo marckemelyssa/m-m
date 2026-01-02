@@ -18,7 +18,7 @@ type ContentSectionProps = {
   buttonLabel?: string;
   buttonHref?: string;
   buttonOnClick?: () => void;
-  images?: [string, string];
+  images?: string[];
   extraButtons?: ExtraButton[];
   paddingTop?: string;
   paddingBottom?: string;
@@ -111,7 +111,7 @@ export default function ContentSection({
         </motion.div>
 
         {/* Images */}
-        {!hideImages && images?.length === 2 && (
+        {!hideImages && images && images.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,23 +119,36 @@ export default function ContentSection({
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="relative w-full max-w-[400px] sm:max-w-[500px] aspect-square mx-auto lg:mx-0 lg:ml-auto mt-8 lg:mt-0"
           >
-            <div className="absolute top-0 left-0 w-[60%] h-[65%] rounded-xl overflow-hidden border border-neutral-700 bg-neutral-300">
-              <Image
-                src={images[0]}
-                alt="Image 1"
-                fill
-                className="object-cover"
-              />
-            </div>
+            {images.length >= 2 ? (
+              <>
+                <div className="absolute top-0 left-0 w-[60%] h-[65%] rounded-xl overflow-hidden border border-neutral-700 bg-neutral-300">
+                  <Image
+                    src={images[0]}
+                    alt="Image 1"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
 
-            <div className="absolute bottom-0 right-0 w-[60%] h-[65%] rounded-xl overflow-hidden border border-neutral-700 bg-neutral-300">
-              <Image
-                src={images[1]}
-                alt="Image 2"
-                fill
-                className="object-cover"
-              />
-            </div>
+                <div className="absolute bottom-0 right-0 w-[60%] h-[65%] rounded-xl overflow-hidden border border-neutral-700 bg-neutral-300">
+                  <Image
+                    src={images[1]}
+                    alt="Image 2"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </>
+            ) : (
+              <div className="absolute inset-0 rounded-xl overflow-hidden border border-neutral-700 bg-neutral-300">
+                <Image
+                  src={images[0]}
+                  alt="Image"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
           </motion.div>
         )}
       </div>
