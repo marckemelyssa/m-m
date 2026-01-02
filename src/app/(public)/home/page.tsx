@@ -1,6 +1,7 @@
 import BackgroundVideo from "./bgVideo";
 import AboutCode from "./sections/about";
 import CodeAbout from "./sections/codeAbout";
+import CodeIncluded from "./sections/codeIncluded";
 import CodeInfo from "./sections/codeInfo";
 import CodeIntro from "./sections/codeIntro";
 import Intro from "./sections/intro";
@@ -15,6 +16,7 @@ export default async function Home() {
         <CodeIntro/>
         <CodeInfo/>
         <CodeAbout/>
+        <CodeIncluded/>
       </div>
     </div>
   );

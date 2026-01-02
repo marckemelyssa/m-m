@@ -1,38 +1,42 @@
-"use client";
-
-import { CheckCircle2, Shield, Rocket, Sparkles, Clock4, Crown, Users, ClipboardCheck } from "lucide-react";
-import { motion } from "framer-motion";
+import {
+  Sparkles,
+  Compass,
+  Activity,
+  Clock4,
+  Users,
+  Layers
+} from "lucide-react";
 
 const highlights = [
   {
-    icon: Rocket,
-    title: "Imersão acelerada",
-    desc: "Método focado em ganhar tração rápida sem perder a base técnica.",
-  },
-  {
-    icon: Shield,
-    title: "Estrutura segura",
-    desc: "Roteiros, planos e revisões para você não se perder no caminho.",
-  },
-  {
     icon: Sparkles,
-    title: "Hands-on real",
-    desc: "Projetos práticos e feedback contínuo para consolidar o aprendizado.",
+    title: "Immersive depth",
+    desc: "A process focused on awareness and refinement, allowing your dance to unfold with clarity and intention.",
+  },
+  {
+    icon: Compass,
+    title: "Structured clarity",
+    desc: "A clear framework that guides your journey and supports confident, conscious progression.",
+  },
+  {
+    icon: Activity,
+    title: "Embodied practice",
+    desc: "Guided explorations that transform understanding into physical expression.",
   },
   {
     icon: Clock4,
-    title: "Ritmo sustentável",
-    desc: "Cronogramas calibrados para caber na sua rotina sem esgotar.",
+    title: "Sustainable journey",
+    desc: "A long-term path designed to respect your body, rhythm, and life.",
   },
   {
     icon: Users,
-    title: "Comunidade e networking",
-    desc: "Trocas com profissionais e pares para gerar conexões e oportunidades.",
+    title: "Community and connection",
+    desc: "A shared space to connect, exchange perspectives, and grow together.",
   },
   {
-    icon: ClipboardCheck,
-    title: "Entrega guiada",
-    desc: "Trilhas com checkpoints e revisões para manter a qualidade e o foco.",
+    icon: Layers,
+    title: "Guided evolution",
+    desc: "Structured chapters that support depth, consistency, and artistic integrity.",
   }
 ];
 
@@ -43,11 +47,11 @@ export default function CodeInfo() {
 
         <div className="space-y-3">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-5xl">
-            Um código para guiar sua jornada
+            A code to guide your journey
           </h2>
           <p className="text-lg text-gray-200 max-w-4xl">
-            Estruturamos uma jornada focada e prática: do zero à entrega, com acompanhamento,
-            projetos guiados e uma linha editorial que mantém você motivado.
+            We’ve designed a focused and intentional journey: from foundation to expression, with close guidance,
+            structured chapters, and a clear methodology that keeps your evolution consistent and inspired.
           </p>
         </div>
 

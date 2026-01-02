@@ -23,15 +23,15 @@ export default function CodeIntro() {
             Welcome to the code
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
-            Um programa para elevar sua dança a um alto impacto.
+            A program to elevate your dance to a high-impact level.
           </h2>
           <p className="text-lg sm:text-xl text-white/80 max-w-4xl">
-            Aceleramos sua evolução com uma curadoria prática, mentorias próximas e projetos que simulam o mercado real.
-            Você entra com vontade; sai com um processo completo para entregar software e crescer na carreira.
+            We accelerate your evolution through a refined methodology, close guidance, and a structured journey that reflects real artistic growth.
+            You come in with curiosity and intention; you leave with a clear process to move, connect, and express with efficiency, depth, and authenticity.
           </p>
           <p className="text-base sm:text-lg text-white/70 max-w-3xl">
-            É mais que um curso: é um caminho comercial, sustentável e acompanhado, para você não perder o ritmo,
-            construir portfólio sólido e disputar as melhores oportunidades.
+            More than a course, The Code is a sustainable and guided path, created to keep you in rhythm, refine your artistic identity,
+            and unlock a universal language of connection through dance.
           </p>
         </div>
 
