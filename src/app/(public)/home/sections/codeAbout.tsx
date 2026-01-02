@@ -11,16 +11,13 @@ export default function CodeAbout() {
           left: "50%",
           transform: "translateX(-50%)",
           background:
-            "linear-gradient(to bottom, var(--ds-neutral-6) 0%,  var(--ds-primary-3) 90%",
+            "linear-gradient(to bottom, var(--ds-neutral-6) 0%,  var(--ds-primary-3) 100%",
         }}
       >
         {/* Single layer only */}
       </div>
 
       <div className="relative max-w-[1300px] mx-auto text-left space-y-4">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ds-primary-2)]">
-          The Code experience
-        </p>
         <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-4xl">
           A space where technique meets presence and expression.
         </h2>
