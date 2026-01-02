@@ -43,7 +43,7 @@ export default function CodeInfo() {
 
         <div className="text-center space-y-3">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-5xl mx-auto">
-            Um caminho completo para dominar o código.
+            Um código para guiar sua jornada
           </h2>
           <p className="text-lg text-gray-200 max-w-4xl mx-auto">
             Estruturamos uma jornada focada e prática: do zero à entrega, com acompanhamento,
@@ -51,11 +51,11 @@ export default function CodeInfo() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 max-w-6xl">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 w-full mx-auto">
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="flex gap-3 items-center rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 backdrop-blur-md"
+              className="flex gap-3 items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md min-w-[280px]"
             >
               <div className="flex h-10 w-10 aspect-square items-center justify-center rounded-full bg-[var(--ds-primary-1)]/25">
                 <item.icon className="h-4 w-4 text-[var(--ds-primary-1)]" />
