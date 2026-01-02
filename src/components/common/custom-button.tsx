@@ -58,7 +58,7 @@ export function CustomButton({
       type={type}
       disabled={disabled}
       className={cn(
-        "relative py-5 px-8 text-[14px] font-semibold rounded-full shadow-md transition-all text-center",
+        "relative py-5 px-8 text-[14px] font-semibold rounded-2xl shadow-md transition-all text-center",
         variantClasses[variant],
         fullWidth && "w-full",
         "font-sans",
