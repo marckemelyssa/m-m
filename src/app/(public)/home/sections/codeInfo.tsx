@@ -11,7 +11,7 @@ const highlights = [
   {
     icon: Sparkles,
     title: "Immersive depth",
-    desc: "A process focused on awareness and refinement, allowing your dance to unfold with clarity and intention.",
+    desc: "A process focused on awareness and refinement, allowing you to unfold with clarity and intention.",
   },
   {
     icon: Compass,
@@ -55,16 +55,16 @@ export default function CodeInfo() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 w-full mx-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 w-full mx-auto items-stretch">
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="flex gap-3 items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md min-w-[280px]"
+              className="flex gap-3 items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md min-w-[280px] h-full"
             >
               <div className="flex h-10 w-10 aspect-square items-center justify-center rounded-full bg-[var(--ds-primary-1)]/25">
                 <item.icon className="h-4 w-4 text-[var(--ds-primary-1)]" />
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 leading-relaxed flex-1">
                 <h3 className="text-white font-semibold text-sm sm:text-base">{item.title}</h3>
                 <p className="text-sm text-white/70 leading-relaxed">{item.desc}</p>
               </div>
