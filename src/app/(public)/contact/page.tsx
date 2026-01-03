@@ -47,6 +47,24 @@ function FacebookLogo(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function WhatsappLogo(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M3 12a9 9 0 0 0 13.86 7.4L21 21l-1.6-4.14A9 9 0 1 0 3 12Z" />
+      <path d="M9 10.5c0 1.38 1.12 2.5 2.5 2.5h.25c.44 0 .86-.12 1.23-.35l.17-.1a1 1 0 0 1 1.4.3l.53.83" />
+    </svg>
+  );
+}
+
 const contactEntries = [
   {
     label: "Instagram",
@@ -56,15 +74,15 @@ const contactEntries = [
   },
   {
     label: "Facebook",
-    value: "MarckSilvaeMelyssaTamada",
-    href: "https://www.facebook.com/MarckSilvaeMelyssaTamada/",
+    value: "Marck e Melyssa",
+    href: "https://www.facebook.com/melyssa.tamada/",
     icon: FacebookLogo,
   },
   {
     label: "Telefone",
     value: contactPhone,
     href: contactPhoneHref,
-    icon: Phone,
+    icon: WhatsappLogo,
   },
 ];
 
