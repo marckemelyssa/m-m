@@ -2,89 +2,49 @@
 
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Send } from "lucide-react";
+import { Facebook, Instagram, Send } from "lucide-react";
 
 import { CustomButton } from "@/components/common/custom-button";
 import { Input } from "@/components/ui/input";
 import { sendEmail } from "@/services/email";
 
 const contactPhone = "+55 (11) 94754-5338";
-const contactPhoneHref = "tel:+5511947545338";
-
-function InstagramLogo(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-    </svg>
-  );
-}
-
-function FacebookLogo(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z" />
-    </svg>
-  );
-}
-
-function WhatsappLogo(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M3 12a9 9 0 0 0 13.86 7.4L21 21l-1.6-4.14A9 9 0 1 0 3 12Z" />
-      <path d="M9 10.5c0 1.38 1.12 2.5 2.5 2.5h.25c.44 0 .86-.12 1.23-.35l.17-.1a1 1 0 0 1 1.4.3l.53.83" />
-    </svg>
-  );
-}
+const contactPhoneHref = "https://wa.me/5511947545338";
 
 const contactEntries = [
   {
     label: "Instagram",
     value: "@marckemelyssa.oficial",
     href: "https://www.instagram.com/marckemelyssa.oficial/",
-    icon: InstagramLogo,
+    icon: Instagram,
   },
   {
     label: "Facebook",
     value: "Marck e Melyssa",
     href: "https://www.facebook.com/melyssa.tamada/",
-    icon: FacebookLogo,
+    icon: Facebook,
   },
   {
     label: "Telefone",
     value: contactPhone,
     href: contactPhoneHref,
-    icon: WhatsappLogo,
+    icon: WhatsappIcon,
   },
 ];
+
+function WhatsappIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 256 256"
+      fill="currentColor"
+      aria-hidden="true"
+      className="h-5 w-5"
+      {...props}
+    >
+      <path d="M128.3.6c-69.9 0-126.6 56.7-126.6 126.6 0 22.3 5.8 44.1 17 63.4L.8 255.4l65.8-17.2c18.4 10.1 39.2 15.5 60.5 15.5h.3c69.9 0 126.6-56.7 126.6-126.6C254 .6 198.2.6 128.3.6zm72.1 179.9c-3 8.5-14.8 15.6-24.3 17.7-6.5 1.4-15 2.5-43.8-9.4-36.7-15.2-60.2-52.5-62.1-55-1.8-2.5-14.8-19.7-14.8-37.6s9.1-26.7 12.3-30.3c3-3.4 7.9-4.9 10.4-4.9 2.5 0 5.2.1 7.5.1 2.4 0 5.6-.9 8.7 6.6 3 7.3 10 25.1 10.9 26.9.9 1.8 1.5 3.9.3 6.4-1.2 2.5-1.8 3.9-3.6 6-1.8 2.1-3.9 4.7-1.6 8.9 2.3 4.1 10.1 16.5 21.7 26.6 14.9 13.3 26.9 17.5 31 19.4 4.1 1.8 6.4 1.5 8.8-.9 2.4-2.4 10.2-11.9 12.9-16 2.7-4.1 5.5-3.4 9.2-2 3.7 1.4 23.6 11.1 27.6 13.1 4.1 2 6.8 3 7.8 4.7 1 1.7 1 9.8-2 18.3z" />
+    </svg>
+  );
+}
 
 export default function ContactPage() {
   const [isSending, setIsSending] = useState(false);
@@ -130,7 +90,6 @@ export default function ContactPage() {
       <div className="absolute inset-0 -z-10 bg-[var(--ds-neutral-6)]" />
       <div className="absolute -left-32 top-16 -z-10 h-80 w-80 rounded-full bg-[var(--ds-primary-3)]/25 blur-[110px]" />
       <div className="absolute -right-24 bottom-0 -z-10 h-96 w-96 rounded-full bg-[var(--ds-primary-1)]/20 blur-[120px]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-white/10 via-transparent to-transparent" />
 
       <div className="px-4 sm:px-6 md:px-12 lg:px-28">
         <section className="relative z-10 pt-52 pb-24 space-y-12 min-h-screen">
