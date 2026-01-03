@@ -1,13 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
-const bullets = [
-  "Pré-venda com vaga garantida para a próxima turma.",
-  "Acesso antecipado aos 3 primeiros módulos e playbooks-chave.",
-  "Bonus: sessão ao vivo exclusiva de kick-off com Marck & Melyssa.",
-  "Certificado oficial The Code ao concluir todas as etapas.",
-];
+import { CheckCircle2 } from "lucide-react";
 
 export default function CodeBuy() {
   return (
@@ -26,53 +20,45 @@ export default function CodeBuy() {
         }}
       />
 
-      <div className="relative max-w-[1300px] mx-auto px-4 sm:px-6 md:px-12 lg:px-28">
+      <div className="relative max-w-[1300px] mx-auto">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
           <div className="space-y-5 text-left lg:pt-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--ds-primary-2)]">
-              Pré-venda The Code
+              Pre-Order The Code
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
-              Garanta sua vaga agora.
+              Early Access to The Code
             </h2>
             <p className="text-lg text-white/85 max-w-3xl">
-              Entre com vantagem: bloqueie sua vaga, receba acesso antecipado aos materiais iniciais
-              e comece a aplicar o processo antes mesmo da turma abrir oficialmente.
+              Be among the first to join the next The Code journey.
+              By pre-ordering, you guarantee your spot in the upcoming cohort and secure your place as soon as the program officially launches.
             </p>
-            <div className="space-y-3 text-white/90">
-              {bullets.map((item) => (
-                <div key={item} className="flex items-center gap-3 text-base sm:text-lg">
-                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[var(--ds-primary-1)]" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 blur-[38px] bg-[var(--ds-primary-3)]/30 rounded-3xl" />
-            <div className="relative rounded-3xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_24px_70px_rgba(0,0,0,0.45)] p-8 sm:p-10 space-y-6 text-white">
-              <div className="flex items-baseline justify-between gap-4">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.18em] text-[var(--ds-primary-2)]">
-                    Oferta de pré-venda
-                  </p>
-                  <h3 className="text-2xl font-semibold">Acesso completo + bônus</h3>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-white/70 line-through">R$ 2.497</p>
-                  <p className="text-3xl sm:text-4xl font-extrabold text-[var(--ds-primary-1)]">
-                    R$ 1.997
-                  </p>
-                  <p className="text-xs text-white/70">à vista ou 12x no cartão</p>
-                </div>
+            <div className="absolute inset-0 bg-[var(--ds-primary-3)]/30 rounded-2xl" />
+            <div className="relative rounded-2xl bg-black/40 p-10 sm:p-12 space-y-6 text-white min-h-[420px]">
+              <div className="space-y-2">
+                <h3 className="text-2xl sm:text-3xl font-semibold">
+                  Full Access
+                </h3>
+                <p className="text-sm sm:text-base text-white/75 leading-relaxed">
+                  Reserve your place now and join the next cohort with priority status when The Code officially begins.
+                </p>
               </div>
 
               <div className="space-y-3 text-sm sm:text-base text-white/80">
-                <p>✅ Vaga garantida na próxima turma.</p>
-                <p>✅ Acesso antecipado aos 3 primeiros módulos.</p>
-                <p>✅ Sessão ao vivo de kick-off exclusiva.</p>
-                <p>✅ Certificado oficial assinado por M&M.</p>
+                {[
+                  "Guaranteed spot in the next cohort",
+                  "Full access to the complete program at launch",
+                  "Live kick-off session with Marck & Melyssa",
+                  "Official The Code Certificate upon completing all stages"
+                ].map((line) => (
+                  <div key={line} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-[var(--ds-primary-1)]" />
+                    <span>{line}</span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -80,13 +66,7 @@ export default function CodeBuy() {
                   href="/checkout"
                   className="flex-1 inline-flex items-center justify-center rounded-xl bg-[var(--ds-primary-1)] px-5 py-3 text-lg font-semibold text-white shadow-lg shadow-[var(--ds-primary-1)]/30 hover:brightness-110 transition"
                 >
-                  Garantir pré-venda agora
-                </Link>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 text-lg font-semibold text-white/85 hover:border-white/40 transition"
-                >
-                  Ver detalhes
+                  Pre-Order Now
                 </Link>
               </div>
             </div>
