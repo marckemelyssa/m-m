@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function CodeBuy() {
   return (
@@ -22,7 +23,13 @@ export default function CodeBuy() {
 
       <div className="relative max-w-[1300px] mx-auto">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
-          <div className="space-y-5 text-left lg:pt-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="space-y-5 text-left lg:pt-6"
+          >
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--ds-primary-2)]">
               Pre-Order Now
             </p>
@@ -32,9 +39,15 @@ export default function CodeBuy() {
             <p className="text-lg text-white/85 max-w-3xl">
               By pre-ordering, you guarantee your spot in the upcoming cohort and secure your place as soon as the program officially launches.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+            className="relative"
+          >
             <div className="absolute inset-0 bg-[var(--ds-primary-3)]/30 rounded-2xl" />
             <div className="relative rounded-2xl bg-black/40 p-10 sm:p-12 space-y-6 text-white min-h-[420px]">
               <div className="space-y-2">
@@ -52,24 +65,37 @@ export default function CodeBuy() {
                   "Full access to the complete program at launch",
                   "Live kick-off session with Marck & Melyssa",
                   "Official The Code Certificate upon completing all stages"
-                ].map((line) => (
-                  <div key={line} className="flex items-center gap-2">
+                ].map((line, idx) => (
+                  <motion.div
+                    key={line}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 + idx * 0.05 }}
+                    className="flex items-center gap-2"
+                  >
                     <CheckCircle2 className="h-4 w-4 text-[var(--ds-primary-1)]" />
                     <span>{line}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+                className="flex flex-col sm:flex-row gap-3"
+              >
                 <Link
                   href="/checkout"
                   className="flex-1 inline-flex items-center justify-center rounded-xl bg-[var(--ds-primary-2)] px-5 py-3 text-lg font-semibold text-white shadow-lg shadow-[var(--ds-primary-1)] hover:brightness-110 transition"
                 >
                   Pre-Order Now
                 </Link>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sparkles,
   Compass,
@@ -44,8 +46,13 @@ export default function CodeInfo() {
   return (
     <section className="relative z-10 w-full bg-transparent py-16">
       <div className="max-w-[1300px] mx-auto space-y-8 text-left">
-
-        <div className="space-y-3">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="space-y-3"
+        >
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight max-w-5xl">
             A code to guide your journey
           </h2>
@@ -53,12 +60,16 @@ export default function CodeInfo() {
             We’ve designed a focused and intentional journey: from foundation to expression, with close guidance,
             structured chapters, and a clear methodology that keeps your evolution consistent and inspired.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 w-full mx-auto items-stretch">
-          {highlights.map((item) => (
-            <div
+          {highlights.map((item, idx) => (
+            <motion.div
               key={item.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: "easeOut", delay: 0.08 + idx * 0.04 }}
               className="flex gap-3 items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md min-w-[280px] h-full"
             >
               <div className="flex h-10 w-10 aspect-square items-center justify-center rounded-full bg-[var(--ds-primary-1)]/25">
@@ -68,10 +79,11 @@ export default function CodeInfo() {
                 <h3 className="text-white font-semibold text-sm sm:text-base">{item.title}</h3>
                 <p className="text-sm text-white/70 leading-relaxed">{item.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+import { motion } from "framer-motion";
