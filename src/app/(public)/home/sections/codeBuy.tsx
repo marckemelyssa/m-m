@@ -24,13 +24,12 @@ export default function CodeBuy() {
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
           <div className="space-y-5 text-left lg:pt-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--ds-primary-2)]">
-              Pre-Order The Code
+              Early Access to The Code
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
               Early Access to The Code
             </h2>
             <p className="text-lg text-white/85 max-w-3xl">
-              Be among the first to join the next The Code journey.
               By pre-ordering, you guarantee your spot in the upcoming cohort and secure your place as soon as the program officially launches.
             </p>
           </div>

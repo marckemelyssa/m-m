@@ -51,8 +51,7 @@ export default function Intro() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <CustomButton onClick={scrollToAbout}>
-
-              Explore
+              Explore The Code
             </CustomButton>
           </motion.div>
 
