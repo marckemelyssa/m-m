@@ -2,27 +2,63 @@
 
 import { FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Camera, Globe, Phone, Send } from "lucide-react";
+import { Phone, Send } from "lucide-react";
 
 import { CustomButton } from "@/components/common/custom-button";
 import { Input } from "@/components/ui/input";
 
 const contactEmail = "hello@marckmelyssa.com";
-const contactPhone = "+55 (11) 99999-9999";
-const contactPhoneHref = "tel:+5511999999999";
+const contactPhone = "+55 (11) 94754-5338";
+const contactPhoneHref = "tel:+5511947545338";
+
+function InstagramLogo(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
+
+function FacebookLogo(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z" />
+    </svg>
+  );
+}
 
 const contactEntries = [
   {
     label: "Instagram",
-    value: "@marckmelyssa",
+    value: "@marckemelyssa.oficial",
     href: "https://www.instagram.com/marckemelyssa.oficial/",
-    icon: Camera,
+    icon: InstagramLogo,
   },
   {
     label: "Facebook",
-    value: "Marck e Melyssa",
+    value: "MarckSilvaeMelyssaTamada",
     href: "https://www.facebook.com/MarckSilvaeMelyssaTamada/",
-    icon: Globe,
+    icon: FacebookLogo,
   },
   {
     label: "Telefone",
@@ -69,7 +105,7 @@ export default function ContactPage() {
                 <div className="relative h-full p-2 sm:p-1 flex flex-col gap-12">
                   <div className="space-y-2">
                     <p className="text-lg uppercase tracking-[0.22em] text-[var(--ds-primary-2)]">
-                      Contatos
+                      Contacts
                     </p>
                   </div>
 
@@ -105,8 +141,7 @@ export default function ContactPage() {
                         <Send className="h-5 w-5 text-[var(--ds-primary-3)]" />
                       </div>
                       <div>
-                        <p className="text-xs uppercase tracking-[0.22em] text-[var(--ds-primary-2)]">Mensagem</p>
-                        <h2 className="text-xl font-semibold text-white">Envie um email rápido</h2>
+                        <h2 className="text-xl font-semibold text-white">Talk with us!</h2>
                       </div>
                     </div>
                   </div>
@@ -118,7 +153,7 @@ export default function ContactPage() {
                         <Input
                           id="name"
                           name="name"
-                          placeholder="Seu nome"
+                          placeholder="Your Name"
                           className="h-11 rounded-xl border-white/10 bg-white/5 text-white placeholder:text-white/50 focus:border-[var(--ds-primary-2)] focus:ring-[var(--ds-primary-2)]/40"
                           required
                         />
@@ -129,15 +164,17 @@ export default function ContactPage() {
                           id="email"
                           name="email"
                           type="email"
-                          placeholder="voce@email.com"
+                          placeholder="you@email.com"
                           className="h-11 rounded-xl border-white/10 bg-white/5 text-white placeholder:text-white/50 focus:border-[var(--ds-primary-2)] focus:ring-[var(--ds-primary-2)]/40"
                           required
                         />
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm text-white/80">Mensagem</label>
+                    <div className="space-y-16">
+                      <label htmlFor="message" className="text-sm text-white/80">
+                        Message
+                      </label>
                       <textarea
                         id="message"
                         name="message"
@@ -150,10 +187,10 @@ export default function ContactPage() {
 
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
                       <p className="text-sm text-white/60">
-                        Respondemos em até 48h. Quanto mais contexto, melhor o retorno.
+                        Respondemos assim que possível.
                       </p>
                       <CustomButton type="submit" className="px-6 py-4">
-                        Enviar email
+                        Send email
                       </CustomButton>
                     </div>
                   </form>
