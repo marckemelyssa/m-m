@@ -4,6 +4,11 @@ import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.4, 0, 0.2, 1] } },
+};
+
 const items = [
   {
     title: "44 in-depth video classes",
@@ -38,7 +43,13 @@ export default function CodeIncluded() {
       className="relative z-10 w-full bg-transparent py-20"
     >
       <div className="max-w-[1300px] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
-        <div className="relative w-full max-w-[550px] mx-auto lg:mx-0">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+          className="relative w-full max-w-[550px] mx-auto lg:mx-0"
+        >
           <div className="absolute left-1/2 top-1/2 w-[78%] max-w-[420px] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--ds-primary-3)]/22 blur-[42px]" />
           <div className="relative overflow-hidden rounded-3xl">
             <Image
@@ -50,7 +61,7 @@ export default function CodeIncluded() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
 
         <div className="space-y-6">
           <motion.div
@@ -64,15 +75,41 @@ export default function CodeIncluded() {
             <div className="w-full h-0.5 bg-[var(--ds-primary-3)] rounded-full" />
           </motion.div>
 
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ds-primary-2)]">
-            Many Benefits
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
-            What’s included in your The Code experience
-          </h2>
-          <div className="space-y-4 text-lg sm:text-xl text-white/85">
-            {items.map((item) => (
-              <div key={item.title} className="flex items-start gap-3">
+          <motion.p
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+            className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ds-primary-2)]"
+          >
+            The complete experience
+          </motion.p>
+          <motion.h2
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+            className="text-4xl sm:text-5xl font-extrabold text-white leading-tight"
+          >
+            Everything designed to support your journey
+          </motion.h2>
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.35 }}
+            className="space-y-4 text-lg sm:text-xl text-white/85"
+          >
+            {items.map((item, idx) => (
+              <motion.div
+                key={item.title}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ delay: 0.08 + idx * 0.04, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+                className="flex items-start gap-3"
+              >
                 <Sparkles className="h-5 w-5 text-[var(--ds-primary-3)] flex-shrink-0" />
                 <div className="space-y-1">
                   <p className="text-base sm:text-lg font-semibold text-white leading-tight">
@@ -82,9 +119,9 @@ export default function CodeIncluded() {
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

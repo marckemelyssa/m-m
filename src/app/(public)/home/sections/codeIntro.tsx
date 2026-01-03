@@ -22,23 +22,49 @@ export default function CodeIntro() {
             <div className="w-full h-0.5 bg-[var(--ds-primary-3)] rounded-full" />
           </motion.div>
 
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ds-primary-2)]">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0 }}
+            className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ds-primary-2)]"
+          >
             Welcome to the code
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.08 }}
+            className="text-4xl sm:text-5xl font-extrabold text-white leading-tight"
+          >
             A program to elevate your dance to a high-impact level.
-          </h2>
-          <p className="text-lg sm:text-xl text-white/80 max-w-4xl">
-            We accelerate your evolution through a refined methodology, close guidance, and a structured journey that reflects real artistic growth.
-            You come in with curiosity and intention; you leave with a clear process to move, connect, and express with efficiency, depth, and authenticity.
-          </p>
-          <p className="text-base sm:text-lg text-white/70 max-w-3xl">
-            More than a course, The Code is a sustainable and guided path, created to keep you in rhythm, refine your artistic identity,
-            and unlock a universal language of connection through dance.
-          </p>
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.16 }}
+            className="space-y-4"
+          >
+            <p className="text-lg sm:text-xl text-white/80 max-w-4xl leading-relaxed">
+              We accelerate your evolution through a refined methodology, close guidance, and a structured journey that reflects real artistic growth.
+              You come in with curiosity and intention; you leave with a clear process to move, connect, and express with efficiency, depth, and authenticity.
+            </p>
+            <p className="text-base sm:text-lg text-white/70 max-w-3xl leading-relaxed">
+              More than a course, The Code is a sustainable and guided path, created to keep you in rhythm, refine your artistic identity,
+              and unlock a universal language of connection through dance.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="relative w-full max-w-[380px] mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.18 }}
+          className="relative w-full max-w-[380px] mx-auto"
+        >
           <div className="absolute inset-0 bg-[var(--ds-primary-1)]/30 blur-3xl" />
           <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
             <Image
@@ -50,7 +76,7 @@ export default function CodeIntro() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
