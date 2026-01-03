@@ -27,9 +27,9 @@ export default function Intro() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
-            className="text-5xl sm:text-6xl font-extrabold text-neutral-100"
+            className="text-4xl sm:text-5xl font-extrabold text-neutral-100"
           >
-            Marck & Melyssa
+            Welcome to the Code.
           </motion.h1>
 
           <motion.p
@@ -39,9 +39,8 @@ export default function Intro() {
             viewport={{ once: true, amount: 0.3 }}
             className="text-lg text-neutral-200"
           >
-            Teachers, coreographys and creators of The Code: a one-year online experience that reveals the
-            methodology behind their dance, refined through years of research
-            and a journey across more than 30 countries.
+            A one-year online experience that blends live mentoring, on-demand training, and a replicable Brazilian Zouk methodology.
+            Designed to keep you in rhythm, launch your artistic voice, and deliver real results.
           </motion.p>
 
           <motion.div
@@ -51,7 +50,7 @@ export default function Intro() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <CustomButton onClick={scrollToAbout}>
-              Explore The Code
+              Explore
             </CustomButton>
           </motion.div>
 

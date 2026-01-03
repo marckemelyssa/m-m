@@ -24,7 +24,7 @@ export default function CodeBuy() {
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
           <div className="space-y-5 text-left lg:pt-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--ds-primary-2)]">
-              Early Access to The Code
+              Pre-Order Now
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
               Early Access to The Code
@@ -63,7 +63,7 @@ export default function CodeBuy() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/checkout"
-                  className="flex-1 inline-flex items-center justify-center rounded-xl bg-[var(--ds-primary-1)] px-5 py-3 text-lg font-semibold text-white shadow-lg shadow-[var(--ds-primary-1)]/30 hover:brightness-110 transition"
+                  className="flex-1 inline-flex items-center justify-center rounded-xl bg-[var(--ds-primary-2)] px-5 py-3 text-lg font-semibold text-white shadow-lg shadow-[var(--ds-primary-1)] hover:brightness-110 transition"
                 >
                   Pre-Order Now
                 </Link>
