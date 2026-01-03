@@ -74,7 +74,8 @@ export default function ContactPage() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
     const name = (formData.get("name") as string) || "Contato";
     const email = (formData.get("email") as string) || "";
     const message = (formData.get("message") as string) || "";
@@ -93,10 +94,13 @@ export default function ContactPage() {
     })
       .then(() => {
         setFeedback({ type: "success", message: "Mensagem enviada com sucesso!" });
-        event.currentTarget.reset();
+        formElement.reset();
       })
-      .catch(() => {
-        setFeedback({ type: "error", message: "Não foi possível enviar agora. Tente novamente em instantes." });
+      .catch((err: any) => {
+        console.error("Email send error", err);
+        const reason =
+          err?.text || err?.message || "Não foi possível enviar agora. Tente novamente em instantes.";
+        setFeedback({ type: "error", message: reason });
       })
       .finally(() => {
         setIsSending(false);

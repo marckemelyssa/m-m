@@ -36,5 +36,14 @@ export async function sendEmail(request: EmailRequest) {
     throw new Error("Email service is not configured.");
   }
 
-  await emailjs.send(serviceId, templateId, request.data, { publicKey });
+  try {
+    return await emailjs.send(serviceId, templateId, request.data, { publicKey });
+  } catch (error) {
+    console.error("EmailJS send failed", {
+      template: request.template,
+      data: request.data,
+      error,
+    });
+    throw error;
+  }
 }
