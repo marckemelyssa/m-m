@@ -4,11 +4,6 @@ import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.4, 0, 0.2, 1] } },
-};
-
 const items = [
   {
     title: "44 in-depth video classes",
@@ -46,8 +41,8 @@ export default function CodeIncluded() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
           className="relative w-full max-w-[550px] mx-auto lg:mx-0"
         >
           <div className="absolute left-1/2 top-1/2 w-[78%] max-w-[420px] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--ds-primary-3)]/22 blur-[42px]" />
@@ -68,46 +63,45 @@ export default function CodeIncluded() {
             className="absolute top-0 left-0 right-0 px-6 sm:px-10 lg:px-16"
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             style={{ transformOrigin: "center", willChange: "transform, opacity" }}
           >
             <div className="w-full h-0.5 bg-[var(--ds-primary-3)] rounded-full" />
           </motion.div>
 
           <motion.p
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.35 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--ds-primary-2)]"
           >
             The complete experience
           </motion.p>
           <motion.h2
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.08 }}
             className="text-4xl sm:text-5xl font-extrabold text-white leading-tight"
           >
             Everything designed to support your journey
           </motion.h2>
           <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.12 }}
             className="space-y-4 text-lg sm:text-xl text-white/85"
           >
             {items.map((item, idx) => (
               <motion.div
                 key={item.title}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
-                transition={{ delay: 0.08 + idx * 0.04, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ delay: 0.18 + idx * 0.05, duration: 0.8, ease: "easeOut" }}
                 className="flex items-start gap-3"
               >
                 <Sparkles className="h-5 w-5 text-[var(--ds-primary-3)] flex-shrink-0" />
