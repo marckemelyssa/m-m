@@ -141,15 +141,17 @@ export default function ContactPage() {
                         <Send className="h-5 w-5 text-[var(--ds-primary-3)]" />
                       </div>
                       <div>
-                        <h2 className="text-xl font-semibold text-white">Talk with us!</h2>
+                        <h2 className="text-2xl font-semibold text-white">
+                          Talk with us!
+                        </h2>
                       </div>
                     </div>
                   </div>
 
                   <form className="space-y-5" onSubmit={handleSubmit}>
                     <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm text-white/80">Nome</label>
+                      <div className="space-y-6">
+                        <label htmlFor="name" className="text-sm text-white/80 block mb-2">Nome</label>
                         <Input
                           id="name"
                           name="name"
@@ -158,8 +160,8 @@ export default function ContactPage() {
                           required
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm text-white/80">Email</label>
+                      <div className="space-y-6">
+                        <label htmlFor="email" className="text-sm text-white/80 block mb-2">Email</label>
                         <Input
                           id="email"
                           name="email"
@@ -171,15 +173,15 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-16">
-                      <label htmlFor="message" className="text-sm text-white/80">
+                    <div className="space-y-8">
+                      <label htmlFor="message" className="text-sm text-white/80 block mb-2">
                         Message
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         rows={6}
-                        placeholder="Conte-nos como podemos ajudar ou qual convite você tem em mente."
+                        placeholder="Tell us how we can help or what invitation you have in mind."
                         className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/50 focus:border-[var(--ds-primary-2)] focus:ring-[var(--ds-primary-2)]/40 focus:outline-none transition"
                         required
                       />
@@ -187,7 +189,7 @@ export default function ContactPage() {
 
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
                       <p className="text-sm text-white/60">
-                        Respondemos assim que possível.
+                        We’ll get back to you as soon as possible.
                       </p>
                       <CustomButton type="submit" className="px-6 py-4">
                         Send email
