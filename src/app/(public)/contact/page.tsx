@@ -2,7 +2,7 @@
 
 import { FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Facebook, Instagram, Phone, Send } from "lucide-react";
+import { Camera, Globe, Phone, Send } from "lucide-react";
 
 import { CustomButton } from "@/components/common/custom-button";
 import { Input } from "@/components/ui/input";
@@ -15,14 +15,14 @@ const contactEntries = [
   {
     label: "Instagram",
     value: "@marckmelyssa",
-    href: "https://www.instagram.com/marckmelyssa",
-    icon: Instagram,
+    href: "https://www.instagram.com/marckemelyssa.oficial/",
+    icon: Camera,
   },
   {
     label: "Facebook",
-    value: "/marckmelyssa",
-    href: "https://www.facebook.com/marckmelyssa",
-    icon: Facebook,
+    value: "Marck e Melyssa",
+    href: "https://www.facebook.com/MarckSilvaeMelyssaTamada/",
+    icon: Globe,
   },
   {
     label: "Telefone",
@@ -49,14 +49,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden min-h-screen">
       <div className="absolute inset-0 -z-10 bg-[var(--ds-neutral-6)]" />
       <div className="absolute -left-32 top-16 -z-10 h-80 w-80 rounded-full bg-[var(--ds-primary-3)]/25 blur-[110px]" />
       <div className="absolute -right-24 bottom-0 -z-10 h-96 w-96 rounded-full bg-[var(--ds-primary-1)]/20 blur-[120px]" />
       <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-white/10 via-transparent to-transparent" />
 
       <div className="px-4 sm:px-6 md:px-12 lg:px-28">
-        <section className="relative z-10 py-24 space-y-12">
+        <section className="relative z-10 pt-52 pb-24 space-y-12 min-h-screen">
           <div className="max-w-[1300px] mx-auto space-y-8">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
               <motion.div
@@ -98,8 +98,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.14 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-[var(--ds-primary-1)]/25 blur-3xl" />
-                <div className="relative rounded-3xl border border-white/10 bg-black/50 p-8 sm:p-10 shadow-2xl shadow-black/40 backdrop-blur-xl">
+                <div className="relative rounded-3xl border border-white/10 bg-transparent p-8 sm:p-10 shadow-lg shadow-black/30 backdrop-blur-xl">
                   <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
                     <div className="flex items-center gap-3">
                       <div className="h-11 w-11 rounded-full bg-[var(--ds-primary-3)]/25 flex items-center justify-center">
