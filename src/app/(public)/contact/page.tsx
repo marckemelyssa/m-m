@@ -1,13 +1,13 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Send } from "lucide-react";
 
 import { CustomButton } from "@/components/common/custom-button";
 import { Input } from "@/components/ui/input";
+import { sendEmail } from "@/services/email";
 
-const contactEmail = "hello@marckmelyssa.com";
 const contactPhone = "+55 (11) 94754-5338";
 const contactPhoneHref = "tel:+5511947545338";
 
@@ -69,6 +69,9 @@ const contactEntries = [
 ];
 
 export default function ContactPage() {
+  const [isSending, setIsSending] = useState(false);
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -76,12 +79,28 @@ export default function ContactPage() {
     const email = (formData.get("email") as string) || "";
     const message = (formData.get("message") as string) || "";
 
-    const subject = encodeURIComponent(`Mensagem do site - ${name}`);
-    const body = encodeURIComponent(
-      `Nome: ${name}\nEmail: ${email}\n\n${message}`
-    );
+    setIsSending(true);
+    setFeedback(null);
 
-    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    const time = new Date().toLocaleString("pt-BR", {
+      timeZone: "America/Sao_Paulo",
+      hour12: false,
+    });
+
+    sendEmail({
+      template: "contact",
+      data: { name, email, message, time },
+    })
+      .then(() => {
+        setFeedback({ type: "success", message: "Mensagem enviada com sucesso!" });
+        event.currentTarget.reset();
+      })
+      .catch(() => {
+        setFeedback({ type: "error", message: "Não foi possível enviar agora. Tente novamente em instantes." });
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
   return (
@@ -191,10 +210,20 @@ export default function ContactPage() {
                       <p className="text-sm text-white/60">
                         We’ll get back to you as soon as possible.
                       </p>
-                      <CustomButton type="submit" className="px-6 py-4">
-                        Send email
+                      <CustomButton type="submit" className="px-6 py-4" disabled={isSending}>
+                        {isSending ? "Enviando..." : "Send email"}
                       </CustomButton>
                     </div>
+
+                    {feedback && (
+                      <div
+                        className={`text-sm ${
+                          feedback.type === "success" ? "text-emerald-300" : "text-rose-300"
+                        }`}
+                      >
+                        {feedback.message}
+                      </div>
+                    )}
                   </form>
                 </div>
               </motion.div>
